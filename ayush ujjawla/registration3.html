@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+            border: 1px solid #f10307;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        input[type="text"], input[type="email"], input[type="number"], input[type="password"], select, input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #dcd50b;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #f88e25;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #c23202;
+        }
+        .file-upload-label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        // Function to validate file size
+        function validateFileSize(input) {
+            const file = input.files[0];
+            if (file.size > 102400) { // 100KB limit
+                alert("File size exceeds 100KB! Please upload a smaller file.");
+                input.value = ""; // Clear the file input
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<form action="#" method="POST" enctype="multipart/form-data">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="number">Phone Number:</label>
+    <input type="number" id="number" name="number" required>
+
+    <label for="aadhar">Aadhar Number:</label>
+    <input type="number" id="aadhar" name="aadhar" required>
+
+    <label for="nationality">Nationality:</label>
+    <select id="nationality" name="nationality" required>
+        <option value="" disabled selected>Select your nationality</option>
+        <option value="Indian">Indian</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="confirm_password">Confirm Password:</label>
+    <input type="password" id="confirm_password" name="confirm_password" required>
+
+    <!-- Document Upload Sections -->
+    <label class="file-upload-label" for="document1">Upload Document 1 (PDF only, max 100KB):</label>
+    <input type="file" id="document1" name="document1" accept="application/pdf" onchange="validateFileSize(this)" required>
+
+    <label class="file-upload-label" for="document2">Upload Document 2 (PDF only, max 100KB):</label>
+    <input type="file" id="document2" name="document2" accept="application/pdf" onchange="validateFileSize(this)" required>
+
+    <label class="file-upload-label" for="document3">Upload Document 3 (PDF only, max 100KB):</label>
+    <input type="file" id="document3" name="document3" accept="application/pdf" onchange="validateFileSize(this)" required>
+
+    <label class="file-upload-label" for="document4">Upload Document 4 (PDF only, max 100KB):</label>
+    <input type="file" id="document4" name="document4" accept="application/pdf" onchange="validateFileSize(this)" required>
+
+    <input type="submit" value="Register">
+</form>
+
+</body>
+</html>

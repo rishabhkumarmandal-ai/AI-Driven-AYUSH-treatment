@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+        .navbar h2 {
+            margin: 0;
+        }
+        .navbar .buttons a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            margin: 0 5px;
+            border-radius: 4px;
+        }
+        .tracking-status {
+            margin: 20px 0;
+        }
+        .tracking-status h3 {
+            margin-bottom: 10px;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress-bar div {
+            height: 25px;
+            background-color: #4CAF50;
+            width: 0%;
+            text-align: center;
+            color: white;
+            line-height: 25px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="navbar">
+            <h2>User Account</h2>
+            <div class="buttons">
+                <a href="#">Settings</a>
+                <a href="#">Post</a>
+                <a href="#">Connect</a>
+            </div>
+        </div>
+
+        <div class="tracking-status">
+            <h3>Application Status</h3>
+            <div class="progress-bar">
+                <div id="progress"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 YourCompany. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to simulate live tracking status
+        function updateProgress(status) {
+            var progressElement = document.getElementById('progress');
+            progressElement.style.width = status + '%';
+            progressElement.innerText = status + '% Complete';
+        }
+
+        // Example: User status fetched from server (simulation)
+        var userApplicationStatus = 60;  // This would be dynamically updated from the server based on user data
+
+        // Update the progress bar with the user's application status
+        updateProgress(userApplicationStatus);
+    </script>
+
+</body>
+</html>

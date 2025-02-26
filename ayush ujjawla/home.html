@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Scholarship and internship finder</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, lightblue, darkblue);
+            color: #050000;
+            padding: 5%;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #004080;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            text-transform: uppercase;
+        }
+
+        .navbar a:hover {
+            background-color: #003366;
+            border-radius: 4px;
+        }
+
+        /* Main container */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+        }
+
+        /* Left side content */
+        .left-content {
+            flex: 1;
+        }
+
+        .left-content h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #00264d;
+        }
+
+        .left-content p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            display: none;
+        }
+
+        .read-more-btn {
+            background-color: #0059b3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .read-more-btn:hover {
+            background-color: #004080;
+        }
+
+        /* Right side image */
+        .right-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .right-content img {
+            width: 400px;
+            height: auto;
+            border-radius: 10px;
+            animation: bounce 3s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Management section */
+        .content {
+            height: 800px;
+            width: 100%;
+            background-color: rgb(148, 191, 221);
+            
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .big-box {
+            height: 80%;
+            width: 80%;
+        }
+
+        .box1-hed {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .box2-para {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .big-box2 {
+            height: 70%;
+            width: 100%;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .box {
+            height: 90%;
+            width: 20%;
+            border-radius: 30px;
+            background-color: rgb(42, 86, 243);
+        }
+
+        .box-image {
+            height: 35%;
+            width: 60%;
+            border-radius: 50%;
+            margin: 10% 19%;
+        }
+
+        .image1 {
+            background-image: url("images/startup-incubators-startuptalky.jpg");
+            background-size: cover;
+        }
+
+        .image2 {
+            background-image: url("images/gov.ashoka.jpg");
+            background-size: cover;
+        }
+
+        .image3 {
+            background-image: url("images/invest.jpg");
+            background-size: cover;
+        }
+
+        .box-txt {
+            height: 50%;
+            width: 100%;
+            color: wheat;
+        }
+
+        .box-txt-hed {
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .box-txt-para {
+            height: 50%;
+            width: 85%;
+            margin: 6% 15%;
+        }
+
+        .more {
+            height: 12%;
+            width: 60%;
+            background-color: rgb(217, 217, 237);
+            border-radius: 8px;
+            margin-left: 20%;
+        }
+
+        .more:hover {
+            background-color: rgb(5, 60, 239);
+        }
+
+        /* Services section */
+        .page {
+            height: 630px;
+            width: 100%;
+            background-color: #7796da;
+        }
+
+        .heading {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 8%;
+        }
+
+        .main {
+            height: 70%;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: rgb(1, 6, 12);\y
+        }
+
+        .box {
+            height: 80%;
+            width: 30%;
+            background-color: #8fhkjkhjkd5e0;
+            border-radius: 5%;
+        }
+
+        .subheading {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 800;
+            margin-top: 8%;
+            padding: 3%;
+        }
+
+        .txt {
+            text-align: center;
+            margin-top: 8%;
+        }
+
+        .button {
+            height: 10%;
+            width: 60%;
+            margin: 15% 22%;
+            border-radius: 10px;
+            border: none;
+        }
+
+        .buttonin {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* Contact Form styles */
+        .contact-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: 50px auto;
+        }
+
+        .contact-form h2 {
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form input[type="submit"] {
+            background-color: #5488b6;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+        }
+
+        .contact-form input[type="submit"]:hover {
+            background-color: #48cbd4;
+        }
+    </style>
+    <script>
+        function toggleReadMore() {
+            var readMore = document.getElementById("read-more");
+            var readMoreBtn = document.getElementById("read-more-btn");
+
+            if (readMore.style.display === "none") {
+                readMore.style.display = "inline";
+                readMoreBtn.innerHTML = "Read Less";
+            } else {
+                readMore.style.display = "none";
+                readMoreBtn.innerHTML = "Read More";
+            }
+        }
+
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+
+            if (name == "" || email == "") {
+                alert("Name and Email must be filled out.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <style>
+         #application {
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: fit-content;
+            background-color: #dae3ec; /* Light gray background */
+        }
+        #Application_button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #2200ff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            width: 10%;
+            height: 5%;
+        }
+        #Application_button:hover {
+            background-color: #b3001e;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="#Home">Home</a>
+            <a href="#management">Management</a>
+            <a href="#services">Services</a>
+            <a href="#achievments">Articles</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Home Section -->
+    <section id="Home">
+        <div class="container">
+            <div class="left-content">
+                <h1>Internship Finder</h1>
+                <h2> Presented by Rishabh Kumar Mandal and Akanksha Chauhan</h2>
+                <p>
+                    Internship Finder is committed to providing the best holistic health solutions 
+                    with the integration of traditional practices and modern technology.
+                    <span id="read-more" class="read-more">
+                        Our team of professionals and experts ensures the highest standards of 
+                        care and guidance in helping individuals achieve their Sucess goals. 
+                        Whether you're looking for Ayurvedic treatments, Yoga guidance, or 
+                        modern healthcare facilities, Internship finder has it all.
+                    </span>
+                </p>
+                <button id="read-more-btn" class="read-more-btn" onclick="toggleReadMore()">Read More</button>
+            </div>
+
+            <div class="right-content">
+                <img src="images/startup.jpeg" alt="Healthcare Image">
+            </div>
+        </div>
+    </section>
+
+    <section id="application">
+        <h1>Application Form</h1>
+        <p> registration:
+            Financial Support: Government se grants aur subsidies milte hain.
+            Market Recognition: Registered startups ko credibility milti hai.
+            Tax Benefits: Tax exemptions aur rebates ka labh utha sakte hain.
+            Networking Opportunities: Industry events aur seminars me participate karne ka mauka milta hai.
+            Access to Resources: Research aur development ke liye resources aur mentorship available hote hain.</p>
+        <a href="connection.html" class="button" id="Application_button"> Enroll now </a>
+    </section>
+
+
+    <!-- Management Section -->
+    <section id="management" class="content">
+        <div class="big-box">
+            <div class="box1-hed">Our Management </div>
+            <div class="box2-para">
+                Meet the leaders who are driving the mission of Ujjawala AYUSH forward.
+            </div>
+            <div class="big-box2">
+                <div class="box">
+                    <div class="box-image image1"></div>
+                    <div class="box-txt">
+                        <div class="box-txt-hed">Incubators</div>
+                        <div class="box-txt-para"> the peoples who give road to new enterprenuers</div>
+                    </div>
+                    <button class="more">Read More</button>
+                </div>
+                <div class="box">
+                    <div class="box-image image2"></div>
+                    <div class="box-txt">
+                        <div class="box-txt-hed">Governments</div>
+                        <div class="box-txt-para"> valuable companies has to be started for nation benefits</div>
+                    </div>
+                    <button class="more">Read More</button>
+                </div>
+                <div class="box">
+                    <div class="box-image image3"></div>
+                    <div class="box-txt">
+                        <div class="box-txt-hed">Investors</div>
+                        <div class="box-txt-para"> the peoples who want to invest their money in right places </div>
+                    </div>
+                    <button class="more">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section id="services">
+    
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #010812;
+            margin: 0;
+            padding: 0;
+        }
+
+        .achievements-section {
+            background-color: #9cbdd5;
+            padding: 50px 0;
+        }
+
+        .achievements-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #0d47a1;
+        }
+
+        .articles-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .article-box {
+            width: 30%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            flex-wrap: wrap;
+        }
+
+        .article-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .article-box img {
+            width: 100%;
+            height: 200px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .article-content {
+            padding: 20px;
+        }
+
+        .article-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1056a5;
+            margin-bottom: 15px;
+        }
+
+        .article-description {
+            font-size: 1rem;
+            color: #210d58;
+            margin-bottom: 15px;
+        }
+
+        .read-more-btn {
+            text-decoration: none;
+            font-weight: bold;
+            color: #cedbe9;
+            border: 2px solid #1565c0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .read-more-btn:hover {
+            background-color: #000204;
+            color: rgb(255, 253, 253);
+        }
+    </style>
+
+
+    <!-- Achievements Section -->
+    <section id="services" class="achievements-section">
+        <div class="achievements-container">
+            <h2 class="section-title"> Services </h2>
+
+            <div class="articles-wrapper">
+                <!-- Article 1 -->
+                <div class="article-box">
+                    <img src="images/ayurveda.jpg" alt="Article Image">
+                    <div class="article-content">
+                        <h3 class="article-title">Article Title 1</h3>
+                        <p class="article-description">This article discusses my work on revitalizing water and wastewater management.</p>
+                        <a href="https://example.com/article1" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="article-box">
+                    <img src="/images/yoga.jpg" alt="Article Image">
+                    <div class="article-content">
+                        <h3 class="article-title">Article Title 2</h3>
+                        <p class="article-description">An in-depth analysis of an AI framework for enhancing supply chain logistics.</p>
+                        <a href="https://example.com/article2" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="article-box">
+                    <img src="images/homeopathy.jpg" alt="Article Image">
+                    <div class="article-content">
+                        <h3 class="article-title">Article Title 3</h3>
+                        <p class="article-description">An overview of the RFID One Card Attendance System and its future applications.</p>
+                        <a href="https://example.com/article3" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+ <!-- articles Section -->
+ <section id="articles" class="achievements-section">
+    <div class="achievements-container">
+        <h2 class="section-title"> Articles </h2>
+
+        <div class="articles-wrapper">
+            <!-- Article 1 -->
+            <div class="article-box">
+                <img src="images/ayurveda.jpg" alt="Article Image">
+                <div class="article-content">
+                    <h3 class="article-title">Article Title 1</h3>
+                    <p class="article-description">This article discusses my work on revitalizing water and wastewater management.</p>
+                    <a href="https://example.com/article1" class="read-more-btn">Read More</a>
+                </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="article-box">
+                <img src="/images/yoga.jpg" alt="Article Image">
+                <div class="article-content">
+                    <h3 class="article-title">Article Title 2</h3>
+                    <p class="article-description">An in-depth analysis of an AI framework for enhancing supply chain logistics.</p>
+                    <a href="https://example.com/article2" class="read-more-btn">Read More</a>
+                </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="article-box">
+                <img src="images/homeopathy.jpg" alt="Article Image">
+                <div class="article-content">
+                    <h3 class="article-title">Article Title 3</h3>
+                    <p class="article-description">An overview of the RFID One Card Attendance System and its future applications.</p>
+                    <a href="https://example.com/article3" class="read-more-btn">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</section>
+
+
+
+
+
+    <!-- Contact Form Section -->
+    <section id="contact">
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <form onsubmit="return validateForm()">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </section>
+
+<div>
+    <section id="FAQ'S">
+    <title>FAQs - Ujjwala Ayush Start-Up Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f18d0b;
+        }
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #dadfe8;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        .question {
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 5px;
+            color: wheat;
+        }
+        .answer {
+            display: none;
+            margin-left: 20px;
+            color: rgb(238, 129, 3);
+        }
+    </style>
+    <script>
+        function toggleAnswer(index) {
+            var answer = document.getElementById("answer-" + index);
+            answer.style.display = answer.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+
+    <div class="faq-container">
+        <h2>FAQs - Ujjwala Ayush Start-Up Portal</h2>
+
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(1)">
+                Q1: Do I need to compulsorily form a company before registering?
+            </div>
+            <div class="answer" id="answer-1">
+                No, it is not compulsory to form a company before registering. You can register as an individual or a group with a business idea in the AYUSH sector.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(2)">
+                Q2: Can I submit more than one application?
+            </div>
+            <div class="answer" id="answer-2">
+                Yes, you can submit multiple applications if you have different business ideas. However, each application will be evaluated separately based on its own merits.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(3)">
+                Q3: Are private investors also incubating start-ups through this portal?
+            </div>
+            <div class="answer" id="answer-3">
+                Yes, private investors and venture capitalists can also incubate start-ups through the portal, in addition to government and AYUSH-related organizations.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(4)">
+                Q4: Is the registration process online or offline?
+            </div>
+            <div class="answer" id="answer-4">
+                The entire process is online, from registration to submission of applications and communication with the portal's incubators.
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+
+<footer style="background-color: #222; padding: 20px 0; color: white; text-align: center;">
+    <p>&copy; 2024 YourCompany. All rights reserved.</p>
+
+    <!-- Social Media Icons -->
+    <div class="social-icons" style="margin: 15px 0;">
+        <a href="https://www.instagram.com" target="_blank" style="color: white; margin: 0 10px; font-size: 24px; text-decoration: none;">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com" target="_blank" style="color: white; margin: 0 10px; font-size: 24px; text-decoration: none;">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" style="color: white; margin: 0 10px; font-size: 24px; text-decoration: none;">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.github.com" target="_blank" style="color: white; margin: 0 10px; font-size: 24px; text-decoration: none;">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.twitter.com" target="_blank" style="color: white; margin: 0 10px; font-size: 24px; text-decoration: none;">
+            <i class="fab fa-twitter"></i>
+        </a>
+    </div>
+</footer>
+
+<!-- Font Awesome Link for Social Icons (This should be included in the <head> section of your HTML) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</body>
+</html>

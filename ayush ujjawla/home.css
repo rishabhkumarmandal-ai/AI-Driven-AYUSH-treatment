@@ -1,0 +1,93 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, lightblue, darkblue);
+    color: #333;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #004080;
+    padding: 10px 20px;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    text-transform: uppercase;
+}
+
+.navbar a:hover {
+    background-color: #003366;
+    border-radius: 4px;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+/* Left side content */
+.left-content {
+    flex: 1;
+}
+
+.left-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #00264d;
+}
+
+.left-content p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.read-more {
+    display: none;
+}
+
+.read-more-btn {
+    background-color: #0059b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.read-more-btn:hover {
+    background-color: #004080;
+}
+
+/* Right side image */
+.right-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.right-content img {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
